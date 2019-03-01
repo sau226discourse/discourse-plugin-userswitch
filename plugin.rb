@@ -3,7 +3,5 @@
 # version: 0.0.1
 # authors: sau226
 
-after_initialize do
-  require 'guardian'
-  load File.expand_path('../lib/userswitch/logic.rb', __FILE__)
-end
+require 'guardian'
+load File.expand_path('../lib/userswitch/logic.rb', __FILE__)
