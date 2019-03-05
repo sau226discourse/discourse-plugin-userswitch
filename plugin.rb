@@ -14,10 +14,10 @@ module UserSwitch
        target &&
 
        # You must be an admin to impersonate (unless you are allowed to switch per the rules below)
-       (target_user.username = "someuseradmin" && source_user.username = "someuser" || is_admin?) &&
+       (target.username = "someuseradmin" && current_user.username = "someuser" || is_admin?) &&
 
        # You may not impersonate other admins unless you are a dev or are allowed to do so by the rules
-       (!target.admin? || is_developer? || target_user.username = "someuseradmin" && source_user.username = "someuser")
+       (!target.admin? || is_developer? || target.username = "someuseradmin" && current_user.username = "someuser")
 
        # Additionally, you may not impersonate yourself;
        # but the two tests for different admin statuses
